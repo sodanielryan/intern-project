@@ -1,0 +1,168 @@
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 24px 16px;
+  text-align: center;
+}
+
+.number {
+  color: #888;
+  font-size: 1rem;
+}
+
+.name {
+  font-size: 2rem;
+  text-transform: capitalize;
+  margin: 4px 0 16px;
+}
+
+.types {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin: 12px 0;
+}
+
+.type {
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  color: white;
+  text-transform: capitalize;
+}
+
+.info {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  margin: 16px 0;
+  font-size: 1rem;
+  color: #98d8d8;
+}
+
+.abilities {
+  color: #333;
+  margin: 16px 0;
+}
+
+.abilities h2 {
+  color: white;
+  margin-bottom: 8px;
+}
+
+.ability {
+  display: inline-block;
+  background: yellow;
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin: 4px;
+  font-size: 0.85rem;
+  text-transform: capitalize;
+}
+
+.stats {
+  margin: 24px 0;
+  text-align: left;
+}
+
+.stats h2 {
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.statRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.statName {
+  width: 100px;
+  font-size: 0.85rem;
+  text-transform: capitalize;
+  color: #6890f0;
+}
+
+.statValue {
+  width: 35px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  text-align: right;
+}
+
+.statBarBg {
+  flex: 1;
+  background: #e0e0e0;
+  border-radius: 10px;
+  height: 10px;
+  overflow: hidden;
+}
+
+.statBarFill {
+  height: 100%;
+  background: #4caf50;
+  border-radius: 10px;
+  transition: width 0.3s ease;
+}
+
+/* Type colors */
+.fire {
+  background: #f08030;
+}
+.water {
+  background: #6890f0;
+}
+.grass {
+  background: #78c850;
+}
+.electric {
+  background: #f8d030;
+  color: #333;
+}
+.psychic {
+  background: #f85888;
+}
+.ice {
+  background: #98d8d8;
+  color: #333;
+}
+.dragon {
+  background: #7038f8;
+}
+.dark {
+  background: #705848;
+}
+.fairy {
+  background: #ee99ac;
+  color: #333;
+}
+.normal {
+  background: #a8a878;
+}
+.fighting {
+  background: #c03028;
+}
+.flying {
+  background: #a890f0;
+}
+.poison {
+  background: #a040a0;
+}
+.ground {
+  background: #e0c068;
+  color: #333;
+}
+.rock {
+  background: #b8a038;
+}
+.bug {
+  background: #a8b820;
+}
+.ghost {
+  background: #705898;
+}
+.steel {
+  background: #b8b8d0;
+  color: #333;
+}
