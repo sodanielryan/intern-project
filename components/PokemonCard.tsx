@@ -14,8 +14,8 @@ const PokemonCard = ({ pokemon }: PokemonCardProps) => {
         <Image
           src={pokemon.sprites.other["official-artwork"].front_default}
           alt={pokemon.name}
-          width={120}
-          height={120}
+          width={50}
+          height={50}
         />
         <p className={styles.number}>#{String(pokemon.id).padStart(3, "0")}</p>
         <h2 className={styles.name}>{pokemon.name}</h2>
