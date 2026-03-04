@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { getPokemonDetail, getPokemonList } from "@/lib/api";
 import { Pokemon, PokemonListItem } from "@/types/pokemon";
 import PokemonCard from "@/components/PokemonCard";
-import Search from "@/components/Search"
+import Search from "@/components/Search";
 import styles from "@/styles/Home.module.css";
 import Filter from "@/components/Filter";
 
@@ -24,14 +24,14 @@ const Home = () => {
     fetchData();
   }, []);
 
-  const types = [...new Set(
-    pokemonList.flatMap((p) => p.types.map((t) => t.type.name))
-  )].sort();
+  const types = [
+    ...new Set(pokemonList.flatMap((p) => p.types.map((t) => t.type.name))),
+  ].sort();
 
   const filteredPokemon = pokemonList.filter((pokemon) => {
-    const matchesSearch =
-      pokemon.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      pokemon.id.toString().includes(searchQuery);
+    const matchesSearch = pokemon.name
+      .toLowerCase()
+      .includes(searchQuery.toLowerCase());
 
     const matchesType =
       selectedType === "" ||
@@ -42,17 +42,19 @@ const Home = () => {
 
   return (
     <main className={styles.main}>
-      <h1 className={styles.title}>PokéDex</h1>
       <div className={styles.searchContainer}>
         <Search searchQuery={searchQuery} onSearch={setSearchQuery} />
-        <Filter selectedType={selectedType} onTypeChange={setSelectedType} types={types} />
+        <Filter
+          selectedType={selectedType}
+          onTypeChange={setSelectedType}
+          types={types}
+        />
       </div>
       <div className={styles.grid}>
         {filteredPokemon.map((pokemon) => (
           <PokemonCard key={pokemon.id} pokemon={pokemon} />
         ))}
       </div>
-
     </main>
   );
 };
