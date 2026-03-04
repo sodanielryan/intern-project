@@ -1,27 +1,45 @@
 .card {
-  background: #fff;
-  border-radius: 12px;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 221, 0, 0.15) 100%
+  );
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
   padding: 16px;
   text-align: center;
   cursor: pointer;
-  transition: transform 0.2s;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-6px);
+  border-color: rgba(255, 222, 0, 0.4);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.25),
+    0 0 0 1px rgba(255, 222, 0, 0.15);
 }
 
 .number {
-  color: #888;
-  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.35);
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
   margin: 4px 0;
 }
 
 .name {
-  color: black;
-  font-size: 1rem;
-  text-transform: capitalize;
+  color: rgba(255, 255, 255, 0.9);
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
   margin: 4px 0;
 }
 
@@ -29,73 +47,77 @@
   display: flex;
   gap: 6px;
   justify-content: center;
-  margin-top: 8px;
+  margin-top: 10px;
 }
 
 .type {
-  padding: 4px 10px;
-  border-radius: 20px;
-  font-size: 0.75rem;
+  padding: 3px 10px;
+  border-radius: 9999px;
+  font-family: "Inter", sans-serif;
+  font-size: 0.45rem;
+  font-weight: 1000;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
   color: white;
-  text-transform: capitalize;
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .fire {
-  background: #f08030;
+  background: rgba(240, 128, 48, 0.5);
 }
 .water {
-  background: #6890f0;
+  background: rgba(104, 144, 240, 0.5);
 }
 .grass {
-  background: #78c850;
+  background: rgba(120, 200, 80, 0.5);
 }
 .electric {
-  background: #f8d030;
-  color: #333;
+  background: rgba(248, 208, 48, 0.5);
+  color: #fff;
 }
 .psychic {
-  background: #f85888;
+  background: rgba(248, 88, 136, 0.5);
 }
 .ice {
-  background: #98d8d8;
-  color: #333;
+  background: rgba(152, 216, 216, 0.5);
+  color: #fff;
 }
 .dragon {
-  background: #7038f8;
+  background: rgba(112, 56, 248, 0.5);
 }
 .dark {
-  background: #705848;
+  background: rgba(112, 88, 72, 0.5);
 }
 .fairy {
-  background: #ee99ac;
-  color: #333;
+  background: rgba(238, 153, 172, 0.5);
+  color: #fff;
 }
 .normal {
-  background: #a8a878;
+  background: rgba(168, 168, 120, 0.5);
 }
 .fighting {
-  background: #c03028;
+  background: rgba(192, 48, 40, 0.5);
 }
 .flying {
-  background: #a890f0;
+  background: rgba(168, 144, 240, 0.5);
 }
 .poison {
-  background: #a040a0;
+  background: rgba(160, 64, 160, 0.5);
 }
 .ground {
-  background: #e0c068;
-  color: #333;
+  background: rgba(224, 192, 104, 0.5);
+  color: #fff;
 }
 .rock {
-  background: #b8a038;
+  background: rgba(184, 160, 56, 0.5);
 }
 .bug {
-  background: #a8b820;
+  background: rgba(168, 184, 32, 0.5);
 }
 .ghost {
-  background: #705898;
+  background: rgba(112, 88, 152, 0.5);
 }
 .steel {
-  background: #b8b8d0;
-  color: #333;
+  background: rgba(184, 184, 208, 0.5);
+  color: #fff;
 }
