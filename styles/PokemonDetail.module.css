@@ -1,0 +1,266 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400&display=swap");
+
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 24px 16px;
+  text-align: center;
+}
+
+.number {
+  color: rgba(255, 255, 255, 0.35);
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+  font-size: 0.65rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.name {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 2.2rem;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.95);
+  margin: 4px 0 12px;
+}
+
+.types {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.type {
+  padding: 2px 10px;
+  border-radius: 9999px;
+  font-family: "Inter", sans-serif;
+  font-size: 0.58rem;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  color: white;
+  text-transform: uppercase;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.info {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin: 14px 0;
+}
+
+.info span {
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 9999px;
+  padding: 4px 12px;
+  backdrop-filter: blur(8px);
+}
+
+.abilities h2 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 4px;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.ability {
+  display: inline-block;
+  background: rgba(255, 222, 0, 0.12);
+  border: 1px solid rgba(255, 222, 0, 0.3);
+  color: rgba(255, 222, 0, 0.9);
+  padding: 3px 10px;
+  border-radius: 9999px;
+  margin: 3px;
+  font-family: "Inter", sans-serif;
+  font-size: 0.62rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  backdrop-filter: blur(6px);
+}
+
+.stats {
+  flex: 1;
+  min-width: 360px;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 16px 20px;
+  backdrop-filter: blur(10px);
+}
+
+.stats h2 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 4px;
+  color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.statRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.statName {
+  width: 100px;
+  font-family: "Inter", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 300;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.statValue {
+  width: 32px;
+  font-family: "Inter", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.85);
+  text-align: right;
+}
+
+.statBarBg {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 9999px;
+  height: 7px;
+  overflow: hidden;
+}
+
+.statBarFill {
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 222, 0, 0.6),
+    rgba(255, 222, 0, 0.9)
+  );
+  border-radius: 9999px;
+  transition: width 0.5s ease;
+}
+
+/* Type colors */
+.fire {
+  background: rgba(240, 128, 48, 0.5);
+}
+.water {
+  background: rgba(104, 144, 240, 0.5);
+}
+.grass {
+  background: rgba(120, 200, 80, 0.5);
+}
+.electric {
+  background: rgba(248, 208, 48, 0.5);
+}
+.psychic {
+  background: rgba(248, 88, 136, 0.5);
+}
+.ice {
+  background: rgba(152, 216, 216, 0.5);
+}
+.dragon {
+  background: rgba(112, 56, 248, 0.5);
+}
+.dark {
+  background: rgba(112, 88, 72, 0.5);
+}
+.fairy {
+  background: rgba(238, 153, 172, 0.5);
+}
+.normal {
+  background: rgba(168, 168, 120, 0.5);
+}
+.fighting {
+  background: rgba(192, 48, 40, 0.5);
+}
+.flying {
+  background: rgba(168, 144, 240, 0.5);
+}
+.poison {
+  background: rgba(160, 64, 160, 0.5);
+}
+.ground {
+  background: rgba(224, 192, 104, 0.5);
+}
+.rock {
+  background: rgba(184, 160, 56, 0.5);
+}
+.bug {
+  background: rgba(168, 184, 32, 0.5);
+}
+.ghost {
+  background: rgba(112, 88, 152, 0.5);
+}
+.steel {
+  background: rgba(184, 184, 208, 0.5);
+}
+
+.layout {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: left;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-width: 380px;
+  background: linear-gradient(
+    to top,
+    rgba(255, 222, 0, 0.06) 0%,
+    rgba(255, 255, 255, 0.11) 100%
+  );
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.abilityList {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+}
+
+.stats {
+  flex: 1;
+  max-width: 280px;
+}
+
+@media (max-width: 640px) {
+  .layout {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .stats {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .left {
+    min-width: unset;
+    width: 100%;
+  }
+}
