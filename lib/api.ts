@@ -13,9 +13,3 @@ export const getPokemonDetail = async (nameOrId: string | number) => {
   const data = await res.json();
   return data;
 };
-
-export const getPokemonTypes = async () => {
-  const res = await fetch(`${BASE_URL}/type`);
-  const data = await res.json();
-  return data.results;
-};
