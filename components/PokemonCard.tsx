@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Pokemon } from "@/types/pokemon";
 import styles from "@/styles/PokemonCard.module.css";
-import { useFavorites } from "@/app/context/FavoriteContext";
+import { useFavorites } from "@/context/FavoriteContext";
 
 interface PokemonCardProps {
   pokemon: Pokemon;

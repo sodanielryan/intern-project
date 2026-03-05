@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useFavorites } from "@/app/context/FavoriteContext";
+import { useFavorites } from "@/context/FavoriteContext";
 import styles from "@/styles/Favorite.module.css";
 
 const FavoritesPage = () => {

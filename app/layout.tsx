@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import "./globals.css";
-import FavoriteProvider from "./context/FavoriteContext";
+import FavoriteProvider from "@/context/FavoriteContext";
 
 export const metadata: Metadata = {
   title: "PokéDex",
