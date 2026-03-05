@@ -121,3 +121,20 @@
   background: rgba(184, 184, 208, 0.5);
   color: #fff;
 }
+
+.addToButtons {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  margin-top: 10px;
+  font-size: 5px;
+  border-radius: 9999px;
+}
+
+.addFave{
+  background: rgba(240, 48, 48, 0.5);
+}
+
+.addTeam{
+  background: rgba(125, 146, 241, 0.5);
+}

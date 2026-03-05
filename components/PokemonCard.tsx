@@ -1,13 +1,24 @@
+"use client";
 import Link from "next/link";
 import Image from "next/image";
 import { Pokemon } from "@/types/pokemon";
 import styles from "@/styles/PokemonCard.module.css";
+import { useFavorites } from "@/app/context/FavoriteContext";
 
 interface PokemonCardProps {
   pokemon: Pokemon;
 }
 
 const PokemonCard = ({ pokemon }: PokemonCardProps) => {
+  const { addFavorite, removeFavorite, isFavorite } = useFavorites();
+
+  const handleAction = (e: React.MouseEvent, action: () => void) => {
+    e.preventDefault(); 
+    action();
+  };
+
+  const favoriteActive = isFavorite(pokemon.id);
+
   return (
     <Link href={`/pokemon/${pokemon.id}`}>
       <div className={styles.card}>
@@ -28,6 +39,15 @@ const PokemonCard = ({ pokemon }: PokemonCardProps) => {
               {t.type.name}
             </span>
           ))}
+        </div>
+        <div className={styles.addToButtons}>
+          <button 
+            onClick={(e) => handleAction(e, favoriteActive ? () => removeFavorite(pokemon.id) : () => addFavorite(pokemon))}
+            className={favoriteActive ? styles.active : ""}
+          >
+            {favoriteActive ? "❤️" : "🤍"}
+          </button>
+          <button>Add Team</button>
         </div>
       </div>
     </Link>
