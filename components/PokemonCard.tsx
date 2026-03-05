@@ -12,11 +12,12 @@ const PokemonCard = ({ pokemon }: PokemonCardProps) => {
     <Link href={`/pokemon/${pokemon.id}`}>
       <div className={styles.card}>
         <Image
-          src={pokemon.sprites.other["official-artwork"].front_default}
-          alt={pokemon.name}
-          width={50}
-          height={50}
-        />
+  src={pokemon.sprites.other["official-artwork"].front_default}
+  alt={pokemon.name}
+  width={100}
+  height={100}
+  className={styles.image}
+/>
         <p className={styles.number}>#{String(pokemon.id).padStart(3, "0")}</p>
         <h2 className={styles.name}>{pokemon.name}</h2>
         <div className={styles.types}>

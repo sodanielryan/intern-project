@@ -1,0 +1,14 @@
+.toggle {
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 9999px;
+  padding: 4px 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.toggle:hover {
+  border-color: rgba(255, 222, 0, 0.6);
+  transform: scale(1.1);
+}

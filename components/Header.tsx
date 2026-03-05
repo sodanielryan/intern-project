@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import styles from "@/styles/Header.module.css";
+import ThemeToggle from "@/components/ThemeToggle";
 
 const Header = () => {
   return (
@@ -17,7 +18,7 @@ const Header = () => {
             />
           </Link>
           <span className={styles.divider} />
-          <span className={styles.title}>PokéDex</span>
+          <span className={styles.title}>OurDex</span>
         </div>
       </header>
       <nav className={styles.nav}>
@@ -31,6 +32,7 @@ const Header = () => {
           About Us
         </Link>
         <div className={styles.pokeball} />
+        <ThemeToggle />
       </nav>
     </header>
   );

@@ -20,14 +20,12 @@ const PokemonDetailPage = async ({ params }: PokemonDetailPageProps) => {
           <h1 className={styles.name}>{pokemon.name}</h1>
 
           <Image
-            src={
-              pokemon.sprites.other["official-artwork"].front_default ||
-              pokemon.sprites.front_default
-            }
-            alt={pokemon.name}
-            width={220}
-            height={220}
-          />
+  src={pokemon.sprites.other["official-artwork"].front_default || pokemon.sprites.front_default}
+  alt={pokemon.name}
+  width={220}
+  height={220}
+  className={styles.image}
+/>
 
           <div className={styles.types}>
             {pokemon.types.map((t) => (

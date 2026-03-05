@@ -12,6 +12,16 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
     <html lang="en">
       <body>
         <Header />
+        <div className="pokeballs">
+  {[...Array(13)].map((_, i) => (
+    <img
+      key={i}
+      src="/pokeball.png"
+      className={`pokeball-bg pokeball-bg-${i + 1}`}
+      alt=""
+    />
+  ))}
+</div>
         {children}
       </body>
     </html>
