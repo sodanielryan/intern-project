@@ -124,17 +124,36 @@
 
 .addToButtons {
   display: flex;
+  flex-direction: row;
   gap: 6px;
   justify-content: center;
+  align-items: center;
   margin-top: 10px;
-  font-size: 5px;
+  flex-wrap: wrap;
+}
+
+.addToButtons button {
+  padding: 4px 12px;
   border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  font-family: "Inter", sans-serif;
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(6px);
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
-.addFave{
-  background: rgba(240, 48, 48, 0.5);
+.teamActive {
+  background: rgba(125, 146, 241, 0.7);
+  border: 1px solid rgba(125, 146, 241, 0.9);
 }
 
-.addTeam{
-  background: rgba(125, 146, 241, 0.5);
+.active{
+  background: rgba(220, 50, 50, 0.55)
+  border: 1px solid rgba(255, 80, 80, 0.4)
 }

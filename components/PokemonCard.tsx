@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Pokemon } from "@/types/pokemon";
 import styles from "@/styles/PokemonCard.module.css";
 import { useFavorites } from "@/context/FavoriteContext";
+import { useTeam } from "@/context/TeamContext";
 
 interface PokemonCardProps {
   pokemon: Pokemon;
@@ -11,13 +12,15 @@ interface PokemonCardProps {
 
 const PokemonCard = ({ pokemon }: PokemonCardProps) => {
   const { addFavorite, removeFavorite, isFavorite } = useFavorites();
+  const { addToTeam, removeFromTeam, isInTeam } = useTeam();
 
   const handleAction = (e: React.MouseEvent, action: () => void) => {
-    e.preventDefault(); 
+    e.preventDefault();
     action();
   };
 
   const favoriteActive = isFavorite(pokemon.id);
+  const teamActive = isInTeam(pokemon.id);
 
   return (
     <Link href={`/pokemon/${pokemon.id}`}>
@@ -41,13 +44,33 @@ const PokemonCard = ({ pokemon }: PokemonCardProps) => {
           ))}
         </div>
         <div className={styles.addToButtons}>
-          <button 
-            onClick={(e) => handleAction(e, favoriteActive ? () => removeFavorite(pokemon.id) : () => addFavorite(pokemon))}
+          <button
+            onClick={(e) =>
+              handleAction(
+                e,
+                favoriteActive
+                  ? () => removeFavorite(pokemon.id)
+                  : () => addFavorite(pokemon),
+              )
+            }
             className={favoriteActive ? styles.active : ""}
           >
             {favoriteActive ? "❤️" : "🤍"}
           </button>
-          <button>Add Team</button>
+
+          <button
+            onClick={(e) =>
+              handleAction(
+                e,
+                teamActive
+                  ? () => removeFromTeam(pokemon.id)
+                  : () => addToTeam(pokemon),
+              )
+            }
+            className={teamActive ? styles.teamActive : ""}
+          >
+            {teamActive ? "➕" : "✚"}
+          </button>
         </div>
       </div>
     </Link>

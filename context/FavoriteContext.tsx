@@ -1,6 +1,11 @@
 "use client";
-
-import { createContext, useContext, useState, ReactNode } from "react";
+import {
+  createContext,
+  useContext,
+  useState,
+  ReactNode,
+  useEffect,
+} from "react";
 import { Pokemon } from "@/types/pokemon";
 
 interface FavoriteContextType {
@@ -10,36 +15,51 @@ interface FavoriteContextType {
   isFavorite: (id: number) => boolean;
 }
 
-const FavoriteContext = createContext<FavoriteContextType | undefined>(undefined);
+const FavoriteContext = createContext<FavoriteContextType | undefined>(
+  undefined,
+);
 
 const FavoriteProvider = ({ children }: { children: ReactNode }) => {
   const [favorites, setFavorites] = useState<Pokemon[]>([]);
-  
+
+  useEffect(() => {
+    const stored = localStorage.getItem("favorites");
+    if (stored) {
+      setFavorites(JSON.parse(stored));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+  }, [favorites]);
+
   const addFavorite = (pokemon: Pokemon) => {
-    setFavorites((prev) => 
-      prev.find((p) => p.id === pokemon.id) ? prev : [...prev, pokemon]
+    setFavorites((prev) =>
+      prev.find((p) => p.id === pokemon.id) ? prev : [...prev, pokemon],
     );
   };
-    
+
   const removeFavorite = (id: number) => {
     setFavorites((prev) => prev.filter((p) => p.id !== id));
-  }
+  };
 
   const isFavorite = (id: number) => favorites.some((p) => p.id === id);
 
   return (
-    <FavoriteContext.Provider value={{ favorites, addFavorite, removeFavorite, isFavorite }}>
+    <FavoriteContext.Provider
+      value={{ favorites, addFavorite, removeFavorite, isFavorite }}
+    >
       {children}
     </FavoriteContext.Provider>
-  )
-}
+  );
+};
 
 export const useFavorites = () => {
   const context = useContext(FavoriteContext);
-  if (!context){
-    throw new Error("useFavorites must be in a FavoriteProvider")
+  if (!context) {
+    throw new Error("useFavorites must be in a FavoriteProvider");
   }
   return context;
-}
+};
 
 export default FavoriteProvider;
