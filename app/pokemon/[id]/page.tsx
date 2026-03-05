@@ -15,7 +15,6 @@ const PokemonDetailPage = async ({ params }: PokemonDetailPageProps) => {
     <main className={styles.container}>
       <div className={styles.layout}>
 
-        {/* LEFT — Pokemon info */}
         <div className={`${styles.left} ${styles.card}`}>
           <p className={styles.number}>#{String(pokemon.id).padStart(3, "0")}</p>
           <h1 className={styles.name}>{pokemon.name}</h1>
@@ -55,7 +54,6 @@ const PokemonDetailPage = async ({ params }: PokemonDetailPageProps) => {
           </div>
         </div>
 
-        {/* RIGHT — Stats */}
         <div className={styles.stats}>
           <h2>Base Stats</h2>
           {pokemon.stats.map((s) => (
