@@ -122,6 +122,6 @@
 }
 
 .active{
-  background: rgba(220, 50, 50, 0.55)
-  border: 1px solid rgba(255, 80, 80, 0.4)
+  background: rgba(220, 50, 50, 0.55);
+  border: 1px solid rgba(255, 80, 80, 0.4);
 }
