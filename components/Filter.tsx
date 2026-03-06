@@ -16,7 +16,7 @@ const Filter = ({ selectedType, onTypeChange, types }: FilterProps) => {
       <option value="">All Types</option>
       {types.map((type) => (
         <option key={type} value={type}>
-          {type.charAt(0).toUpperCase() + type.slice(1)}
+          {type}
         </option>
       ))}
     </select>

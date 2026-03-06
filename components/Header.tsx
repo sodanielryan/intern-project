@@ -22,8 +22,8 @@ const Header = () => {
         </div>
       </header>
       <nav className={styles.nav}>
-        <Link href="/pokemon" className={styles.navLink}>
-          Generations
+        <Link href="/favorites" className={styles.navLink}>
+          Favorites
         </Link>
         <Link href="/types" className={styles.navLink}>
           Types
