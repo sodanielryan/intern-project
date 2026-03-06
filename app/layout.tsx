@@ -13,17 +13,16 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en">
       <body>
-        <Header />
         <div className="pokeballs">
-  {[...Array(13)].map((_, i) => (
-    <img
-      key={i}
-      src="/pokeball.png"
-      className={`pokeball-bg pokeball-bg-${i + 1}`}
-      alt=""
-    />
-  ))}
-</div>
+        {[...Array(13)].map((_, i) => (
+        <img
+          key={i}
+          src="/pokeball.png"
+          className={`pokeball-bg pokeball-bg-${i + 1}`}
+          alt=""
+          />
+        ))}
+      </div>
         <FavoriteProvider>
           <TeamProvider>
             <Header />
