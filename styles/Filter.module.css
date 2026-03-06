@@ -1,7 +1,7 @@
 .select {
   height: 40px;
   padding: 10px 20px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid var(--border);
   border-radius: 9999px;
   font-size: 0.8rem;
   font-family: "Inter", sans-serif;
@@ -10,10 +10,10 @@
   text-transform: uppercase;
   outline: none;
   cursor: pointer;
-  background: rgba(255, 255, 255, 0.07);
+  background: var(--card-bg);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  color: rgba(255, 255, 255, 0.75);
+  color: var(--text-muted);
   appearance: none;
   -webkit-appearance: none;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='rgba(255,255,255,0.5)' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
@@ -28,19 +28,19 @@
 
 .select:hover {
   border-color: rgba(255, 222, 0, 0.5);
-  background-color: rgba(255, 255, 255, 0.11);
-  color: rgba(255, 255, 255, 0.95);
+  background-color: var(--card-bg);
+  color: var(--text);
 }
 
 .select:focus {
   border-color: rgba(255, 222, 0, 0.8);
   box-shadow: 0 0 0 3px rgba(255, 222, 0, 0.1);
-  color: #fff;
+  color: var(--text);
 }
 
 .select option {
-  background: #1a1a1a;
-  color: rgba(255, 255, 255, 0.85);
+  background: var(--background);
+  color: var(--text);
   font-size: 0.85rem;
   letter-spacing: 1px;
 }

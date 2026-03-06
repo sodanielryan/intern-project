@@ -4,17 +4,17 @@
   width: 100%;
   max-width: 400px;
   padding: 10px 20px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid var(--border);
   border-radius: 9999px;
   font-size: 0.8rem;
   font-family: "Inter", sans-serif;
   font-weight: 300;
   letter-spacing: 2px;
   outline: none;
-  background: rgba(255, 255, 255, 0.07);
+  background: var(--card-bg);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  color: rgba(255, 255, 255, 0.75);
+  color: var(--text-muted);
   transition:
     border-color 0.2s ease,
     background-color 0.2s ease,
@@ -22,20 +22,20 @@
 }
 
 .search::placeholder {
-  color: rgba(255, 255, 255, 0.3);
+  color: var(--text-muted);
   letter-spacing: 2px;
   text-transform: uppercase;
   font-size: 0.75rem;
 }
 
 .search:hover {
-  border-color: rgba(255, 255, 255, 0.25);
-  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--border);
+  background: var(--card-bg);
 }
 
 .search:focus {
   border-color: rgba(255, 222, 0, 0.8);
-  background: rgba(255, 255, 255, 0.11);
-  color: #fff;
+  background: var(--card-bg);
+  color: var(--text);
   box-shadow: 0 0 0 3px rgba(255, 222, 0, 0.1);
 }

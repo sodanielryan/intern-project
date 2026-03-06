@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400&display=swap');
 
 .header {
-  background: rgba(255, 255, 255, 0.08);
+  background: var(--card-bg);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  height: 68px;
+  height: 80px;
   padding: 0 3rem;
   display: flex;
   align-items: center;
@@ -12,7 +12,7 @@
   position: sticky;
   top: 0;
   z-index: 100;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  border-bottom: 1px solid var(--border);
 }
 
 .left {
@@ -40,13 +40,13 @@
 .divider {
   width: 1px;
   height: 28px;
-  background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.25), transparent);
+  background: linear-gradient(to bottom, transparent, var(--border), transparent);
 }
 
 .title {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 1.5rem;
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--text);
   letter-spacing: 5px;
   text-transform: uppercase;
   transition: color 0.25s ease;
@@ -67,7 +67,7 @@
   font-family: 'Inter', sans-serif;
   font-weight: 300;
   font-size: 0.78rem;
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--text-muted);
   text-decoration: none;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -87,7 +87,7 @@
 }
 
 .navLink:hover {
-  color: rgba(255, 255, 255, 0.95);
+  color: var(--text);
 }
 
 .navLink:hover::after {
@@ -98,7 +98,7 @@
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  border: 2px solid rgba(255, 255, 255, 0.4);
+  border: 2px solid var(--border);
   position: relative;
   cursor: pointer;
   transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
@@ -138,4 +138,45 @@
   transform: rotate(30deg) scale(1.1);
   border-color: rgba(255, 222, 0, 0.8);
   box-shadow: 0 0 14px rgba(255, 222, 0, 0.35);
+}
+
+@media (max-width: 768px) {
+  .header {
+    height: auto;
+    padding: 12px 1.2rem;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .nav {
+    width: 100%;
+    justify-content: center;
+    gap: 1.2rem;
+    padding-bottom: 8px;
+  }
+
+  .left {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .title {
+    font-size: 1.1rem;
+    letter-spacing: 3px;
+  }
+
+  .navLink {
+    font-size: 0.68rem;
+    letter-spacing: 1.5px;
+  }
+
+  .pokeball {
+    width: 22px;
+    height: 22px;
+  }
+
+  .logoImage {
+    width: 80px !important;
+    height: auto !important;
+  }
 }
