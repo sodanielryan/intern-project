@@ -1,14 +1,13 @@
 "use client";
 
-import Image from "next/image";
-import Link from "next/link";
 import { useFavorites } from "@/context/FavoriteContext";
-import styles from "@/styles/Favorite.module.css";
 import { useTeam } from "@/context/TeamContext";
+import PokemonCard from "@/components/PokemonCard";
+import styles from "@/styles/Favorite.module.css";
 
 const FavoritesPage = () => {
-  const { favorites, removeFavorite } = useFavorites();
-  const { team, removeFromTeam } = useTeam();
+  const { favorites } = useFavorites();
+  const { team } = useTeam();
 
   return (
     <main className={styles.main}>
@@ -18,47 +17,7 @@ const FavoritesPage = () => {
       ) : (
         <div className={styles.grid}>
           {team.map((pokemon) => (
-            <div key={pokemon.id} className={styles.card}>
-              <Link
-                href={`/pokemon/${pokemon.id}`}
-                style={{ textDecoration: "none" }}
-              >
-                <Image
-                  src={pokemon.sprites.other["official-artwork"].front_default}
-                  alt={pokemon.name}
-                  width={96}
-                  height={96}
-                  priority
-                />
-                <p className={styles.number}>
-                  #{String(pokemon.id).padStart(3, "0")}
-                </p>
-                <h2 className={styles.name}>{pokemon.name}</h2>
-                <div className={styles.types}>
-                  {pokemon.types.map((t) => (
-                    <span
-                      key={t.type.name}
-                      className={`${styles.type} ${styles[t.type.name]}`}
-                    >
-                      {t.type.name}
-                    </span>
-                  ))}
-                </div>
-              </Link>
-              <button
-                className={styles.addFave}
-                onClick={() => removeFromTeam(pokemon.id)}
-                style={{
-                  cursor: "pointer",
-                  width: "100%",
-                  marginTop: "8px",
-                  borderRadius: "9999px",
-                  padding: "4px 0",
-                }}
-              >
-                Remove
-              </button>
-            </div>
+            <PokemonCard key={pokemon.id} pokemon={pokemon} />
           ))}
         </div>
       )}
@@ -71,47 +30,7 @@ const FavoritesPage = () => {
       ) : (
         <div className={styles.grid}>
           {favorites.map((pokemon) => (
-            <div key={pokemon.id} className={styles.card}>
-              <Link
-                href={`/pokemon/${pokemon.id}`}
-                style={{ textDecoration: "none" }}
-              >
-                <Image
-                  src={pokemon.sprites.other["official-artwork"].front_default}
-                  alt={pokemon.name}
-                  width={96}
-                  height={96}
-                  priority
-                />
-                <p className={styles.number}>
-                  #{String(pokemon.id).padStart(3, "0")}
-                </p>
-                <h2 className={styles.name}>{pokemon.name}</h2>
-                <div className={styles.types}>
-                  {pokemon.types.map((t) => (
-                    <span
-                      key={t.type.name}
-                      className={`${styles.type} ${styles[t.type.name]}`}
-                    >
-                      {t.type.name}
-                    </span>
-                  ))}
-                </div>
-              </Link>
-              <button
-                className={styles.addFave}
-                onClick={() => removeFavorite(pokemon.id)}
-                style={{
-                  cursor: "pointer",
-                  width: "100%",
-                  marginTop: "8px",
-                  borderRadius: "9999px",
-                  padding: "4px 0",
-                }}
-              >
-                Remove
-              </button>
-            </div>
+            <PokemonCard key={pokemon.id} pokemon={pokemon} />
           ))}
         </div>
       )}
